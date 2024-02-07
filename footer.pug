@@ -3,7 +3,7 @@
     - var now = new Date()
     - var nowYear = now.getFullYear()
     if theme.footer.owner.since && theme.footer.owner.since != nowYear
-      .copyright!= `&copy;${theme.footer.owner.since} - ${nowYear + ' '} <i id="heart" class="fa fas fa-heart"></i> ${config.author}`
+      .copyright!= `<i id="copyright" class="fa fas fa-copyright"></i> ${theme.footer.owner.since} - ${nowYear + ' '} <i id="heart" class="fa fas fa-heart"></i> ${config.author}`
     else
       .copyright!= `<i id="copyright" class="fa fas fa-copyright"></i> ${nowYear + ' '} <i id="heart" class="fa fas fa-heart "></i> ${config.author}`
   if theme.footer.copyright
