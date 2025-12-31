@@ -1,10 +1,10 @@
 #footer-wrap
   if theme.footer.owner.enable
-    - var now = new Date()
+    - var now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Shanghai" }))
     - var nowYear = now.getFullYear()
     if theme.footer.owner.since && theme.footer.owner.since != nowYear
-      .copyright!= `<i id="copyright" class="fa fas fa-copyright"></i> ${theme.footer.owner.since} - ${nowYear + ' '} <i id="heart" class="fa fas fa-heart"></i> ${config.author}`
+      .copyright!= `<i class="fa fas fa-copyright"></i> ${theme.footer.owner.since} - ${nowYear} <i class="fa fas fa-heart"></i> ${config.author}`
     else
-      .copyright!= `<i id="copyright" class="fa fas fa-copyright"></i> ${nowYear + ' '} <i id="heart" class="fa fas fa-heart "></i> ${config.author} All Rights Reserved.`
+      .copyright!= `<i class="fa fas fa-copyright"></i> ${nowYear} <i class="fa fas fa-heart"></i> ${config.author} All Rights Reserved.`
   if theme.footer.custom_text
-    .footer_custom_text!=`${theme.footer.custom_text}`
+    .footer_custom_text!= theme.footer.custom_text
