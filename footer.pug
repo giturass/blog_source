@@ -1,10 +1,11 @@
-.footer-copyright
-  if owner.enable
-    - const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Shanghai" }))
-    - const currentYear = now.getFullYear()
-    - const sinceYear = owner.since
-    span.copyright
-      if sinceYear && sinceYear != currentYear
-        != `<i class="fa fas fa-copyright"></i> ${sinceYear} - ${currentYear} <i class="fa fas fa-heart"></i> ${config.author}`
-      else
+- const { owner, custom_text } = theme.footer
+
+.footer-other
+  .footer-copyright
+    if owner && owner.enable
+      - const currentYear = new Date().getFullYear()
+      span.copyright
         != `<i class="fa fas fa-copyright"></i> ${currentYear} <i class="fa fas fa-heart"></i> ${config.author} All Rights Reserved.`
+
+  if custom_text
+    .footer_custom_text!= custom_text
